@@ -1,0 +1,1 @@
+{"version":3,"file":"sensorservice.d.ts","sourceRoot":"","sources":["../../src/services/sensorservice.ts"],"names":[],"mappings":"AAEA,OAAO,EAAE,cAAc,EAAmB,MAAM,SAAS,CAAC;AAE1D,OAAO,EAAE,OAAO,EAAE,MAAM,mBAAmB,CAAC;AAoC5C,eAAO,MAAM,aAAa;mBA7BE,cAAc,YAAY,MAAM,UAAU,GAAG,KAAG,QAAQ,IAAI,CAAC;gBAMlE,QAAQ,OAAO,CAAC;iBAIrB,IAAI;CAqBrB,CAAA"}

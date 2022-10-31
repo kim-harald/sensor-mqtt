@@ -1,0 +1,53 @@
+{
+  message: 'IC2 bus is Open, address is 72',
+  level: 'info',
+  timestamp: '2022-10-19T18:32:35.436Z'
+}
+{ message: '{}', level: 'info', timestamp: '2022-10-19T18:32:35.442Z' }
+{
+  message: 'IC2 bus is Open, address is 72',
+  level: 'info',
+  timestamp: '2022-10-19T18:32:35.444Z'
+}
+{
+  message: 'undefined',
+  level: 'info',
+  timestamp: '2022-10-19T18:32:35.445Z'
+}
+{
+  message: 'IC2 bus is Open, address is 72',
+  level: 'info',
+  timestamp: '2022-10-19T18:33:35.085Z'
+}
+{ message: '{}', level: 'info', timestamp: '2022-10-19T18:33:35.092Z' }
+{
+  message: 'IC2 bus is Open, address is 72',
+  level: 'info',
+  timestamp: '2022-10-19T18:33:35.093Z'
+}
+{
+  message: 'undefined',
+  level: 'info',
+  timestamp: '2022-10-19T18:33:35.095Z'
+}
+{
+  message: 'IC2 bus is Open, address is 72',
+  level: 'info',
+  timestamp: '2022-10-19T18:33:42.590Z'
+}
+{
+  message: 'IC2 bus is Open, address is 72',
+  level: 'info',
+  timestamp: '2022-10-19T18:34:06.755Z'
+}
+{ message: '{}', level: 'info', timestamp: '2022-10-19T18:34:06.762Z' }
+{
+  message: 'IC2 bus is Open, address is 72',
+  level: 'info',
+  timestamp: '2022-10-19T18:34:06.764Z'
+}
+{
+  message: 'undefined',
+  level: 'info',
+  timestamp: '2022-10-19T18:34:06.765Z'
+}
