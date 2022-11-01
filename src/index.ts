@@ -6,7 +6,7 @@ import {
 } from 'i2c-bus';
 import { MqqtService, ReadingType } from './services/mqqtservice';
 import { Job, scheduleJob } from 'node-schedule';
-import { DbService } from './data/dbservice';
+import { Db } from './data/dbservice';
 import { rotate } from './services/rotateService';
 import { Reading } from './models/reading';
 import { rounded } from './common/common';
@@ -21,7 +21,7 @@ async function run() {
   
   await SensorService.init(i2cbus, config.DeviceId, options);
   await MqqtService.init(config.mqtt.broker, config.mqtt.topic, config.mqtt.user, config.mqtt.pw);
-  await DbService.init(config.Db, 10000);
+  await Db.init(config.Db, 10000);
 
   setInterval(async () => {
     const currentReading = await SensorService.read();
@@ -60,7 +60,7 @@ const execute = async () => {
 const performShutdown = async():Promise<void> => {
   SensorService.close();
   await MqqtService.close();
-  await DbService.close();
+  await Db.close();
   process.exit();
 }
 
