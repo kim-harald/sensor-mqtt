@@ -17,9 +17,6 @@ let intervalhandle: NodeJS.Timer;
 run();
 
 async function run() {
-
-
-
   try {
     const i2cbus = await I2CBusOpen(config.I2CBusNumber);
     const options = (config as any)[config.DeviceId];

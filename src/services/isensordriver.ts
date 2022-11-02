@@ -1,4 +1,3 @@
-import { Observable } from 'rxjs';
 import { Reading } from '../models/reading';
 
 export interface ISensorDriver {

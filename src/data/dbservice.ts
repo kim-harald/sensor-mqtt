@@ -134,6 +134,6 @@ const nextId = (): string => {
     return uuid().toString();
 }
 
-export const DbService = {
+export const Db = {
     init, close, save, saveAll, get, getAll, remove
 }

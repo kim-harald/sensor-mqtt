@@ -54,8 +54,5 @@ const subscribeTopic = (readingType: ReadingType): Observable<number | Reading> 
     });
 }
 
-
-
 export type ReadingType = 'temperature' | 'pressure' | 'humidity' | 'all';
-
 export const MqqtService = { init, send, close, subscribeTopic };
