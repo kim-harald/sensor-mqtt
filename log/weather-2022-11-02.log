@@ -1,0 +1,634 @@
+{
+  message: 'IC2 bus is Open, address is 72',
+  level: 'info',
+  timestamp: '2022-11-02T07:17:31.256Z'
+}
+{ message: '{}', level: 'info', timestamp: '2022-11-02T07:17:31.261Z' }
+{
+  message: 'IC2 bus is Open, address is 72',
+  level: 'info',
+  timestamp: '2022-11-02T07:17:31.262Z'
+}
+{
+  message: 'undefined',
+  level: 'info',
+  timestamp: '2022-11-02T07:17:31.263Z'
+}
+{
+  message: 'Data sent to gimel/sensor/temperature',
+  level: 'debug',
+  timestamp: '2022-11-02T07:17:42.269Z'
+}
+{
+  message: 'Data sent to gimel/sensor/pressure',
+  level: 'debug',
+  timestamp: '2022-11-02T07:17:42.312Z'
+}
+{
+  message: 'Data sent to gimel/sensor/humidity',
+  level: 'debug',
+  timestamp: '2022-11-02T07:17:42.313Z'
+}
+{
+  message: 'Data sent to gimel/sensor/temperature',
+  level: 'debug',
+  timestamp: '2022-11-02T07:17:52.268Z'
+}
+{
+  message: 'Data sent to gimel/sensor/pressure',
+  level: 'debug',
+  timestamp: '2022-11-02T07:17:52.314Z'
+}
+{
+  message: 'Data sent to gimel/sensor/humidity',
+  level: 'debug',
+  timestamp: '2022-11-02T07:17:52.315Z'
+}
+{
+  message: 'Data sent to gimel/sensor/temperature',
+  level: 'debug',
+  timestamp: '2022-11-02T07:18:02.272Z'
+}
+{
+  message: 'Data sent to gimel/sensor/pressure',
+  level: 'debug',
+  timestamp: '2022-11-02T07:18:02.316Z'
+}
+{
+  message: 'Data sent to gimel/sensor/humidity',
+  level: 'debug',
+  timestamp: '2022-11-02T07:18:02.319Z'
+}
+{
+  message: 'IC2 bus is Open, address is 72',
+  level: 'info',
+  timestamp: '2022-11-02T07:18:44.033Z'
+}
+{ message: '{}', level: 'info', timestamp: '2022-11-02T07:18:44.040Z' }
+{
+  message: 'IC2 bus is Open, address is 72',
+  level: 'info',
+  timestamp: '2022-11-02T07:18:44.042Z'
+}
+{
+  message: 'undefined',
+  level: 'info',
+  timestamp: '2022-11-02T07:18:44.043Z'
+}
+{
+  message: 'Data sent to alef/sensor/temperature',
+  level: 'debug',
+  timestamp: '2022-11-02T07:18:54.904Z'
+}
+{
+  message: 'Data sent to alef/sensor/pressure',
+  level: 'debug',
+  timestamp: '2022-11-02T07:18:54.947Z'
+}
+{
+  message: 'Data sent to alef/sensor/humidity',
+  level: 'debug',
+  timestamp: '2022-11-02T07:18:54.949Z'
+}
+{
+  message: 'Data sent to alef/sensor/temperature',
+  level: 'debug',
+  timestamp: '2022-11-02T07:19:04.894Z'
+}
+{
+  message: 'Data sent to alef/sensor/pressure',
+  level: 'debug',
+  timestamp: '2022-11-02T07:19:04.941Z'
+}
+{
+  message: 'Data sent to alef/sensor/humidity',
+  level: 'debug',
+  timestamp: '2022-11-02T07:19:04.943Z'
+}
+{
+  message: 'Data sent to alef/sensor/temperature',
+  level: 'debug',
+  timestamp: '2022-11-02T07:19:14.898Z'
+}
+{
+  message: 'Data sent to alef/sensor/pressure',
+  level: 'debug',
+  timestamp: '2022-11-02T07:19:14.941Z'
+}
+{
+  message: 'Data sent to alef/sensor/humidity',
+  level: 'debug',
+  timestamp: '2022-11-02T07:19:14.943Z'
+}
+{
+  message: 'Data sent to alef/sensor/temperature',
+  level: 'debug',
+  timestamp: '2022-11-02T07:19:24.901Z'
+}
+{
+  message: 'Data sent to alef/sensor/pressure',
+  level: 'debug',
+  timestamp: '2022-11-02T07:19:24.944Z'
+}
+{
+  message: 'Data sent to alef/sensor/humidity',
+  level: 'debug',
+  timestamp: '2022-11-02T07:19:24.947Z'
+}
+{
+  message: 'Data sent to alef/sensor/temperature',
+  level: 'debug',
+  timestamp: '2022-11-02T07:19:34.897Z'
+}
+{
+  message: 'Data sent to alef/sensor/pressure',
+  level: 'debug',
+  timestamp: '2022-11-02T07:19:34.941Z'
+}
+{
+  message: 'Data sent to alef/sensor/humidity',
+  level: 'debug',
+  timestamp: '2022-11-02T07:19:34.943Z'
+}
+{
+  message: 'IC2 bus is Open, address is 72',
+  level: 'info',
+  timestamp: '2022-11-02T07:19:46.334Z'
+}
+{ message: '{}', level: 'info', timestamp: '2022-11-02T07:19:46.340Z' }
+{
+  message: 'IC2 bus is Open, address is 72',
+  level: 'info',
+  timestamp: '2022-11-02T07:19:46.341Z'
+}
+{
+  message: 'undefined',
+  level: 'info',
+  timestamp: '2022-11-02T07:19:46.342Z'
+}
+{
+  message: 'Data sent to alef/sensor/temperature',
+  level: 'debug',
+  timestamp: '2022-11-02T07:19:57.472Z'
+}
+{
+  message: 'Data sent to alef/sensor/pressure',
+  level: 'debug',
+  timestamp: '2022-11-02T07:19:57.518Z'
+}
+{
+  message: 'Data sent to alef/sensor/humidity',
+  level: 'debug',
+  timestamp: '2022-11-02T07:19:57.519Z'
+}
+{
+  message: 'Data sent to alef/sensor/all',
+  level: 'debug',
+  timestamp: '2022-11-02T07:20:00.063Z'
+}
+{
+  message: 'Data sent to alef/sensor/temperature',
+  level: 'debug',
+  timestamp: '2022-11-02T07:20:07.468Z'
+}
+{
+  message: 'Data sent to alef/sensor/pressure',
+  level: 'debug',
+  timestamp: '2022-11-02T07:20:07.513Z'
+}
+{
+  message: 'Data sent to alef/sensor/humidity',
+  level: 'debug',
+  timestamp: '2022-11-02T07:20:07.514Z'
+}
+{
+  message: 'Data sent to alef/sensor/temperature',
+  level: 'debug',
+  timestamp: '2022-11-02T07:20:17.473Z'
+}
+{
+  message: 'Data sent to alef/sensor/pressure',
+  level: 'debug',
+  timestamp: '2022-11-02T07:20:17.517Z'
+}
+{
+  message: 'Data sent to alef/sensor/humidity',
+  level: 'debug',
+  timestamp: '2022-11-02T07:20:17.520Z'
+}
+{
+  message: 'Data sent to alef/sensor/temperature',
+  level: 'debug',
+  timestamp: '2022-11-02T07:20:27.469Z'
+}
+{
+  message: 'Data sent to alef/sensor/pressure',
+  level: 'debug',
+  timestamp: '2022-11-02T07:20:27.514Z'
+}
+{
+  message: 'Data sent to alef/sensor/humidity',
+  level: 'debug',
+  timestamp: '2022-11-02T07:20:27.515Z'
+}
+{
+  message: 'Data sent to alef/sensor/temperature',
+  level: 'debug',
+  timestamp: '2022-11-02T07:20:37.471Z'
+}
+{
+  message: 'Data sent to alef/sensor/pressure',
+  level: 'debug',
+  timestamp: '2022-11-02T07:20:37.517Z'
+}
+{
+  message: 'Data sent to alef/sensor/humidity',
+  level: 'debug',
+  timestamp: '2022-11-02T07:20:37.519Z'
+}
+{
+  message: 'Data sent to alef/sensor/temperature',
+  level: 'debug',
+  timestamp: '2022-11-02T07:20:47.471Z'
+}
+{
+  message: 'Data sent to alef/sensor/pressure',
+  level: 'debug',
+  timestamp: '2022-11-02T07:20:47.515Z'
+}
+{
+  message: 'Data sent to alef/sensor/humidity',
+  level: 'debug',
+  timestamp: '2022-11-02T07:20:47.517Z'
+}
+{
+  message: 'Data sent to alef/sensor/temperature',
+  level: 'debug',
+  timestamp: '2022-11-02T07:20:57.476Z'
+}
+{
+  message: 'Data sent to alef/sensor/pressure',
+  level: 'debug',
+  timestamp: '2022-11-02T07:20:57.519Z'
+}
+{
+  message: 'Data sent to alef/sensor/humidity',
+  level: 'debug',
+  timestamp: '2022-11-02T07:20:57.521Z'
+}
+{
+  message: 'IC2 bus is Open, address is 72',
+  level: 'info',
+  timestamp: '2022-11-02T07:21:06.807Z'
+}
+{ message: '{}', level: 'info', timestamp: '2022-11-02T07:21:06.818Z' }
+{
+  message: 'IC2 bus is Open, address is 72',
+  level: 'info',
+  timestamp: '2022-11-02T07:21:06.819Z'
+}
+{
+  message: 'undefined',
+  level: 'info',
+  timestamp: '2022-11-02T07:21:06.820Z'
+}
+{
+  message: 'IC2 bus is Open, address is 72',
+  level: 'info',
+  timestamp: '2022-11-02T07:22:06.540Z'
+}
+{ message: '{}', level: 'info', timestamp: '2022-11-02T07:22:06.547Z' }
+{
+  message: 'IC2 bus is Open, address is 72',
+  level: 'info',
+  timestamp: '2022-11-02T07:22:06.549Z'
+}
+{
+  message: 'undefined',
+  level: 'info',
+  timestamp: '2022-11-02T07:22:06.550Z'
+}
+{
+  message: 'Data sent to alef/sensor/temperature',
+  level: 'debug',
+  timestamp: '2022-11-02T07:22:22.989Z'
+}
+{
+  message: 'Data sent to alef/sensor/pressure',
+  level: 'debug',
+  timestamp: '2022-11-02T07:22:23.031Z'
+}
+{
+  message: 'Data sent to alef/sensor/humidity',
+  level: 'debug',
+  timestamp: '2022-11-02T07:22:23.032Z'
+}
+{
+  message: 'Data sent to alef/sensor/temperature',
+  level: 'debug',
+  timestamp: '2022-11-02T07:22:32.983Z'
+}
+{
+  message: 'Data sent to alef/sensor/pressure',
+  level: 'debug',
+  timestamp: '2022-11-02T07:22:33.027Z'
+}
+{
+  message: 'Data sent to alef/sensor/humidity',
+  level: 'debug',
+  timestamp: '2022-11-02T07:22:33.029Z'
+}
+{
+  message: 'Data sent to alef/sensor/temperature',
+  level: 'debug',
+  timestamp: '2022-11-02T07:22:42.987Z'
+}
+{
+  message: 'Data sent to alef/sensor/pressure',
+  level: 'debug',
+  timestamp: '2022-11-02T07:22:43.031Z'
+}
+{
+  message: 'Data sent to alef/sensor/humidity',
+  level: 'debug',
+  timestamp: '2022-11-02T07:22:43.032Z'
+}
+{
+  message: 'Data sent to alef/sensor/temperature',
+  level: 'debug',
+  timestamp: '2022-11-02T07:22:52.991Z'
+}
+{
+  message: 'Data sent to alef/sensor/pressure',
+  level: 'debug',
+  timestamp: '2022-11-02T07:22:53.035Z'
+}
+{
+  message: 'Data sent to alef/sensor/humidity',
+  level: 'debug',
+  timestamp: '2022-11-02T07:22:53.037Z'
+}
+{
+  message: 'Data sent to alef/sensor/temperature',
+  level: 'debug',
+  timestamp: '2022-11-02T07:23:02.993Z'
+}
+{
+  message: 'Data sent to alef/sensor/pressure',
+  level: 'debug',
+  timestamp: '2022-11-02T07:23:03.039Z'
+}
+{
+  message: 'Data sent to alef/sensor/humidity',
+  level: 'debug',
+  timestamp: '2022-11-02T07:23:03.040Z'
+}
+{
+  message: 'Data sent to alef/sensor/temperature',
+  level: 'debug',
+  timestamp: '2022-11-02T07:23:12.998Z'
+}
+{
+  message: 'Data sent to alef/sensor/pressure',
+  level: 'debug',
+  timestamp: '2022-11-02T07:23:13.042Z'
+}
+{
+  message: 'Data sent to alef/sensor/humidity',
+  level: 'debug',
+  timestamp: '2022-11-02T07:23:13.044Z'
+}
+{
+  message: 'Data sent to alef/sensor/temperature',
+  level: 'debug',
+  timestamp: '2022-11-02T07:23:23.007Z'
+}
+{
+  message: 'Data sent to alef/sensor/pressure',
+  level: 'debug',
+  timestamp: '2022-11-02T07:23:23.051Z'
+}
+{
+  message: 'Data sent to alef/sensor/humidity',
+  level: 'debug',
+  timestamp: '2022-11-02T07:23:23.052Z'
+}
+{
+  message: 'Data sent to alef/sensor/temperature',
+  level: 'debug',
+  timestamp: '2022-11-02T07:23:33.012Z'
+}
+{
+  message: 'Data sent to alef/sensor/pressure',
+  level: 'debug',
+  timestamp: '2022-11-02T07:23:33.057Z'
+}
+{
+  message: 'Data sent to alef/sensor/humidity',
+  level: 'debug',
+  timestamp: '2022-11-02T07:23:33.058Z'
+}
+{
+  message: 'IC2 bus is Open, address is 72',
+  level: 'info',
+  timestamp: '2022-11-02T07:23:35.634Z'
+}
+{ message: '{}', level: 'info', timestamp: '2022-11-02T07:23:35.643Z' }
+{
+  message: 'IC2 bus is Open, address is 72',
+  level: 'info',
+  timestamp: '2022-11-02T07:23:35.644Z'
+}
+{
+  message: 'undefined',
+  level: 'info',
+  timestamp: '2022-11-02T07:23:35.646Z'
+}
+{
+  message: 'IC2 bus is Open, address is 72',
+  level: 'info',
+  timestamp: '2022-11-02T07:23:48.522Z'
+}
+{ message: '{}', level: 'info', timestamp: '2022-11-02T07:23:48.528Z' }
+{
+  message: 'IC2 bus is Open, address is 72',
+  level: 'info',
+  timestamp: '2022-11-02T07:23:48.529Z'
+}
+{
+  message: 'undefined',
+  level: 'info',
+  timestamp: '2022-11-02T07:23:48.530Z'
+}
+{
+  message: 'IC2 bus is Open, address is 72',
+  level: 'info',
+  timestamp: '2022-11-02T07:24:08.522Z'
+}
+{ message: '{}', level: 'info', timestamp: '2022-11-02T07:24:08.528Z' }
+{
+  message: 'IC2 bus is Open, address is 72',
+  level: 'info',
+  timestamp: '2022-11-02T07:24:08.529Z'
+}
+{
+  message: 'undefined',
+  level: 'info',
+  timestamp: '2022-11-02T07:24:08.530Z'
+}
+{
+  message: 'IC2 bus is Open, address is 72',
+  level: 'info',
+  timestamp: '2022-11-02T07:24:35.163Z'
+}
+{ message: '{}', level: 'info', timestamp: '2022-11-02T07:24:35.170Z' }
+{
+  message: 'IC2 bus is Open, address is 72',
+  level: 'info',
+  timestamp: '2022-11-02T07:24:35.171Z'
+}
+{
+  message: 'undefined',
+  level: 'info',
+  timestamp: '2022-11-02T07:24:35.173Z'
+}
+{
+  message: 'Data sent to alef/sensor/all',
+  level: 'debug',
+  timestamp: '2022-11-02T07:25:00.086Z'
+}
+{
+  message: 'Data sent to alef/sensor/temperature',
+  level: 'debug',
+  timestamp: '2022-11-02T07:25:00.135Z'
+}
+{
+  message: 'Data sent to alef/sensor/pressure',
+  level: 'debug',
+  timestamp: '2022-11-02T07:25:00.223Z'
+}
+{
+  message: 'Data sent to alef/sensor/humidity',
+  level: 'debug',
+  timestamp: '2022-11-02T07:25:00.225Z'
+}
+{
+  message: 'Data sent to alef/sensor/temperature',
+  level: 'debug',
+  timestamp: '2022-11-02T07:25:10.094Z'
+}
+{
+  message: 'Data sent to alef/sensor/pressure',
+  level: 'debug',
+  timestamp: '2022-11-02T07:25:10.144Z'
+}
+{
+  message: 'Data sent to alef/sensor/humidity',
+  level: 'debug',
+  timestamp: '2022-11-02T07:25:10.145Z'
+}
+{
+  message: 'Data sent to alef/sensor/temperature',
+  level: 'debug',
+  timestamp: '2022-11-02T07:25:20.104Z'
+}
+{
+  message: 'Data sent to alef/sensor/pressure',
+  level: 'debug',
+  timestamp: '2022-11-02T07:25:20.155Z'
+}
+{
+  message: 'Data sent to alef/sensor/humidity',
+  level: 'debug',
+  timestamp: '2022-11-02T07:25:20.156Z'
+}
+{
+  message: 'Data sent to alef/sensor/temperature',
+  level: 'debug',
+  timestamp: '2022-11-02T07:25:30.104Z'
+}
+{
+  message: 'Data sent to alef/sensor/pressure',
+  level: 'debug',
+  timestamp: '2022-11-02T07:25:30.154Z'
+}
+{
+  message: 'Data sent to alef/sensor/humidity',
+  level: 'debug',
+  timestamp: '2022-11-02T07:25:30.156Z'
+}
+{
+  message: 'Data sent to alef/sensor/temperature',
+  level: 'debug',
+  timestamp: '2022-11-02T07:25:40.115Z'
+}
+{
+  message: 'Data sent to alef/sensor/pressure',
+  level: 'debug',
+  timestamp: '2022-11-02T07:25:40.167Z'
+}
+{
+  message: 'Data sent to alef/sensor/humidity',
+  level: 'debug',
+  timestamp: '2022-11-02T07:25:40.168Z'
+}
+{
+  message: 'Data sent to alef/sensor/temperature',
+  level: 'debug',
+  timestamp: '2022-11-02T07:25:50.125Z'
+}
+{
+  message: 'Data sent to alef/sensor/pressure',
+  level: 'debug',
+  timestamp: '2022-11-02T07:25:50.169Z'
+}
+{
+  message: 'Data sent to alef/sensor/humidity',
+  level: 'debug',
+  timestamp: '2022-11-02T07:25:50.171Z'
+}
+{
+  message: 'Data sent to alef/sensor/temperature',
+  level: 'debug',
+  timestamp: '2022-11-02T07:26:00.130Z'
+}
+{
+  message: 'Data sent to alef/sensor/pressure',
+  level: 'debug',
+  timestamp: '2022-11-02T07:26:00.174Z'
+}
+{
+  message: 'Data sent to alef/sensor/humidity',
+  level: 'debug',
+  timestamp: '2022-11-02T07:26:00.176Z'
+}
+{
+  message: 'Data sent to alef/sensor/temperature',
+  level: 'debug',
+  timestamp: '2022-11-02T07:26:10.136Z'
+}
+{
+  message: 'Data sent to alef/sensor/pressure',
+  level: 'debug',
+  timestamp: '2022-11-02T07:26:10.180Z'
+}
+{
+  message: 'Data sent to alef/sensor/humidity',
+  level: 'debug',
+  timestamp: '2022-11-02T07:26:10.182Z'
+}
+{
+  message: 'Data sent to alef/sensor/temperature',
+  level: 'debug',
+  timestamp: '2022-11-02T07:26:20.143Z'
+}
+{
+  message: 'Data sent to alef/sensor/pressure',
+  level: 'debug',
+  timestamp: '2022-11-02T07:26:20.187Z'
+}
+{
+  message: 'Data sent to alef/sensor/humidity',
+  level: 'debug',
+  timestamp: '2022-11-02T07:26:20.189Z'
+}

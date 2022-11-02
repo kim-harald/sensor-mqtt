@@ -4,8 +4,7 @@ import {
   openPromisified as I2CBusOpen,
   PromisifiedBus as I2CBusP
 } from 'i2c-bus';
-import { delay, from, Observable } from 'rxjs';
-import { rounded, cKelvinOffset } from '../common/common';
+import { rounded, cKelvinOffset, delay } from '../common/common';
 import { Reading } from '../models/reading';
 import { I2COptions, ISensorDriver } from './isensordriver';
 import { WLogger } from './loggerservice';

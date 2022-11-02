@@ -1,1 +1,0 @@
-{"version":3,"file":"deviceservice.d.ts","sourceRoot":"","sources":["../../src/services/deviceservice.ts"],"names":[],"mappings":"AAEA,OAAO,EAAE,cAAc,EAAmB,MAAM,SAAS,CAAC;AAE1D,OAAO,EAAE,OAAO,EAAE,MAAM,mBAAmB,CAAC;AAyB5C,eAAO,MAAM,aAAa;qBAlBI,MAAM,OAAO,cAAc;qBAU3B,MAAM,KAAG,QAAQ,OAAO,CAAC;sBAI9B,MAAM,KAAG,IAAI;CAMrC,CAAC"}
