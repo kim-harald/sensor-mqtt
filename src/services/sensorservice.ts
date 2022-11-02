@@ -27,13 +27,13 @@ const close = (): void => {
 const getSensor = (deviceId: string, i2cbus: PromisifiedBus, config: any): ISensorDriver => {
     switch (deviceId) {
         case 'LM75A':
-            return new LM75A({ I2C: config.LM75A }, i2cbus);
-        case 'BME280':
-            return new BMX280({ I2C: config.BMX280 }, i2cbus);
+            return new LM75A({ I2C: config }, i2cbus);
+        case 'BMX280':
+            return new BMX280({ I2C: config }, i2cbus);
         case 'AHT10':
-            return new ATH10({ I2C: config.ATH10 }, i2cbus);
-        case 'AHT10_BMX280':
-            return new AHT10_BMX280({I2C:config.AHT10},{I2C:config.BMX280},i2cbus);
+            return new ATH10({ I2C: config }, i2cbus);
+        // case 'AHT10_BMX280':
+        //     return new AHT10_BMX280({I2C:config},{I2C:config},i2cbus);
         case 'Test':
             return new SensorTestService({});
         default:

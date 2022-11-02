@@ -1,18 +1,18 @@
 import { createLogger, format, transports } from 'winston';
-import settings from '../config/default.json';
+import config from '../config/default.json';
 import 'winston-daily-rotate-file';
 
 const { combine } = format;
 
 const logger = createLogger({
-    level: settings.logLevel,
+    level: config.logLevel,
     transports: [
         new transports.DailyRotateFile({
             filename: 'weather-%DATE%.log',
-            dirname: settings.logPath,
+            dirname: config.logPath,
             datePattern: 'YYYY-MM-DD',
             zippedArchive: true,
-            level: settings.logLevel,
+            level: config.logLevel,
             format: combine(format.simple(), format.timestamp(), format.prettyPrint()),
             maxFiles: '30d'
         }),
