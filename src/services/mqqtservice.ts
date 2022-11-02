@@ -2,6 +2,7 @@ import { AsyncMqttClient, connectAsync, IClientOptions } from "async-mqtt"
 import { Observable } from "rxjs";
 import { Payload } from "../models/payload";
 import { Reading } from "../models/reading";
+import { WLogger } from "./loggerservice";
 
 let client: AsyncMqttClient;
 let baseTopic: string;
@@ -11,7 +12,7 @@ const init = async (brokerUri: string, topic: string, username: string, password
     const options = {
         username,
         password,
-        rejectUnauthorized: false
+        rejectUnauthorized: false,
     } as IClientOptions;
     client = await connectAsync(brokerUri, options);
     baseTopic = topic;
@@ -22,7 +23,8 @@ const send = async (readingType: ReadingType, data: number | Reading): Promise<b
     const json = readingType === 'all'
         ? JSON.stringify(data)
         : data.toString();
-    await client.publish(topics[readingType], json);
+    await client.publish(topics[readingType], json, { retain: true, qos:1 });
+    WLogger.debug(`Data sent to ${topics[readingType]}` );
     return true;
 }
 
@@ -52,8 +54,5 @@ const subscribeTopic = (readingType: ReadingType): Observable<number | Reading> 
     });
 }
 
-
-
 export type ReadingType = 'temperature' | 'pressure' | 'humidity' | 'all';
-
 export const MqqtService = { init, send, close, subscribeTopic };

@@ -1,0 +1,16 @@
+[Unit]
+Description=Weather Logger
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/node ./index.js
+WorkingDirectory=/home/pi/apps/sensor
+StandardOutput=syslog
+StandardError=syslog
+Restart=on-failure
+RestartSec=2000ms
+User=pi
+Group=pi
+
+[Install]
+WantedBy=multi-user.target
