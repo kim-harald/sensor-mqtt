@@ -6,7 +6,7 @@ import {
 } from 'i2c-bus';
 import { MqqtService, ReadingType } from './services/mqqtservice';
 import { gracefulShutdown, Job, scheduleJob } from 'node-schedule';
-import { DbService } from './data/dbservice';
+import { Db } from './data/dbservice';
 import { rotate } from './services/rotateService';
 import { Reading } from './models/reading';
 import { delay, rounded } from './common/common';
@@ -22,7 +22,7 @@ async function run() {
     const options = (config as any)[config.DeviceId];
     await SensorService.init(i2cbus, config.DeviceId, options);
     await MqqtService.init(config.mqtt.broker, config.mqtt.topic, config.mqtt.user, config.mqtt.pw);
-    await DbService.init(config.Db, 10000);
+    await Db.init(config.Db, 10000);
 
     const delayTime = 10 - new Date().getSeconds() % 10;
     await delay(delayTime*1000);
@@ -47,7 +47,7 @@ async function run() {
         WLogger.info('Closing sensor service');
         MqqtService.close();
         WLogger.info('Closing Mqtt service');
-        DbService.close();
+        Db.close();
         WLogger.info('Closing db');
         process.exit();
       });
@@ -63,21 +63,6 @@ const execute = async () => {
   if (await MqqtService.send('all', reading)) {
     rotate(reading, config.deleteThreshold);
   };
-}
-
-const performShutdown = (): void => {
-  WLogger.info('Caught interrupt signal');
-  WLogger.info('Performing shutdown');
-  clearTimeout(intervalhandle);
-  gracefulShutdown().then(() => {
-    SensorService.close();
-    WLogger.info('Closing sensor service');
-    MqqtService.close();
-    WLogger.info('Closing Mqtt service');
-    DbService.close();
-    WLogger.info('Closing db');
-    process.exit();
-  });
 }
 
 const checkIfDataHasChanged = (oldValue: number, newValue: number, rounding: number) => {

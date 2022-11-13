@@ -1,11 +1,12 @@
 import { BMX280 } from "./BMX280";
 import { ISensorDriver } from "./isensordriver";
-import { PromisifiedBus, openPromisified } from 'i2c-bus';
+import { PromisifiedBus } from 'i2c-bus'
 import { LM75A } from "./LM75A";
 import { Reading } from "../models/reading";
 import { ATH10 } from "./aht10";
 import { SensorTestService } from "./sensortestservice";
 import { AHT10_BMX280 } from "./aht10_bme280";
+import { v4 as uuidv4 } from 'uuid';
 
 
 let _sensorDriver: ISensorDriver;
@@ -17,7 +18,9 @@ const init = async (i2cBus: PromisifiedBus, deviceId: string, config: any): Prom
 }
 
 const read = async (): Promise<Reading> => {
-    return _sensorDriver.read();
+    const reading = await _sensorDriver.read();
+    reading.id ??= uuidv4().toString();
+    return reading;
 }
 
 const close = (): void => {

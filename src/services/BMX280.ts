@@ -280,15 +280,13 @@ export class BMX280 implements ISensorDriver {
     const pressure = this.compensatePressure(adc_P, cal1, t_fine);
     const humidity = this.compensateHumidity(adc_H, cal2, cal3, t_fine);
 
-    const reading = {
+    return {
       ts: new Date().valueOf(),
       temperature: temperature,
       humidity: humidity,
       pressure: pressure,
       device: 'BME280'
-    } as Reading;
-
-    return reading;
+    } ;
   }
 
   private async setSampling(
