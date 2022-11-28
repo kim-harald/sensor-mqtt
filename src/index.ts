@@ -24,14 +24,16 @@ async function run() {
     await MqqtService.init(config.mqtt.broker, config.mqtt.topic, config.mqtt.user, config.mqtt.pw);
     await Db.init(config.Db, 10000);
 
+    WLogger.info(`Log level is ${config.logLevel}`);
+
     const delayTime = 10 - new Date().getSeconds() % 10;
-    await delay(delayTime*1000);
+    await delay(delayTime * 1000);
     intervalhandle = setInterval(async () => {
       const reading = await SensorService.read();
 
-      MqqtService.send('temperature', reading.temperature);
-      MqqtService.send('pressure', reading.pressure);
-      MqqtService.send('humidity', reading.humidity);
+      await MqqtService.send('temperature', reading.temperature);
+      await MqqtService.send('pressure', reading.pressure);
+      await MqqtService.send('humidity', reading.humidity);
 
     }, config.sampleInterval);
 
@@ -58,11 +60,9 @@ async function run() {
 }
 
 const execute = async () => {
-
   let reading = await SensorService.read();
-  if (await MqqtService.send('all', reading)) {
-    rotate(reading, config.deleteThreshold);
-  };
+  await MqqtService.send('all', reading)
+  await rotate(reading, config.deleteThreshold);
 }
 
 const checkIfDataHasChanged = (oldValue: number, newValue: number, rounding: number) => {

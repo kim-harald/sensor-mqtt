@@ -18,14 +18,18 @@ const init = async (brokerUri: string, topic: string, username: string, password
     baseTopic = topic;
 };
 
-const send = async (readingType: ReadingType, data: number | Reading): Promise<boolean> => {
-    topics[readingType] = baseTopic + '/' + readingType;
-    const json = readingType === 'all'
-        ? JSON.stringify(data)
-        : data.toString();
-    await client.publish(topics[readingType], json, { retain: true, qos:1 });
-    WLogger.debug(`Data sent to ${topics[readingType]}` );
-    return true;
+const send = async (readingType: ReadingType, data: number | Reading): Promise<void> => {
+    try {
+        topics[readingType] = baseTopic + '/' + readingType;
+        const json = readingType === 'all'
+            ? JSON.stringify(data)
+            : data.toString();
+        await client.publish(topics[readingType], json, { retain: true, qos:1 });
+        WLogger.debug(`Data sent to ${topics[readingType]}` );    
+    } catch (error) {
+        WLogger.error(error);
+    }
+    
 }
 
 const close = async () => {
