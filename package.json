@@ -19,6 +19,9 @@
     "prebuild:gimel": "sh prebuild.gimel.sh",
     "build:gimel": "tsc -b tsconfig.json",
     "postbuild:gimel": "sh postbuild.gimel.sh",
+    "prebuild:dalet": "sh prebuild.dalet.sh",
+    "build:dalet": "tsc -b tsconfig.json",
+    "postbuild:dalet": "sh postbuild.dalet.sh",
     "lint": "eslint . --ext .ts --fix"
   },
   "author": "",

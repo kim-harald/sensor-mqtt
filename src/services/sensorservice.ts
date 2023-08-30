@@ -35,8 +35,11 @@ const getSensor = (deviceId: string, i2cbus: PromisifiedBus, config: any): ISens
             return new BMX280({ I2C: config }, i2cbus);
         case 'AHT10':
             return new ATH10({ I2C: config }, i2cbus);
-        // case 'AHT10_BMX280':
-        //     return new AHT10_BMX280({I2C:config},{I2C:config},i2cbus);
+        case 'AHT10_BMX280':
+            if (config.devices) {
+                config.devices
+            }
+            return new AHT10_BMX280({ I2C: config }, { I2C: config }, i2cbus);
         case 'Test':
             return new SensorTestService({});
         default:

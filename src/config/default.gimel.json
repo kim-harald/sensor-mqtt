@@ -39,7 +39,7 @@
     "logLevel": "debug",
     "sampleInterval": 10000,
     "sampleSchedule": "0 0,5,10,15,20,25,30,35,40,45,50,55 * * * *",
-    "deleteThreshold": 86400000,
+    "deleteThreshold": 2419200000,
     "useStatusLed": false,
     "mqtt": {
         "broker": "mqtts://kimharald.com:8883",
