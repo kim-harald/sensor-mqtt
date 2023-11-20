@@ -11,6 +11,7 @@ import { rotate } from './services/rotateService';
 import { Reading } from './models/reading';
 import { delay, rounded } from './common/common';
 import { WLogger } from './services/loggerservice';
+import { TrendService } from './services/trendservice';
 
 let intervalhandle: NodeJS.Timer;
 
@@ -32,6 +33,9 @@ async function run() {
       MqqtService.send('temperature', reading.temperature);
       MqqtService.send('pressure', reading.pressure);
       MqqtService.send('humidity', reading.humidity);
+      
+      const trend = processTrends(reading);
+      MqqtService.send('trend',trend);
 
     }, config.sampleInterval);
 
@@ -65,7 +69,11 @@ const execute = async () => {
   };
 }
 
-const checkIfDataHasChanged = (oldValue: number, newValue: number, rounding: number) => {
-  return rounded(oldValue, rounding) !== rounded(newValue, rounding);
+const processTrends = (reading:Reading):Record<string,number> => {
+  return {
+    temperature: TrendService.add(reading.temperature, 'temperature'),
+    pressure:TrendService.add(reading.pressure, 'pressure'),
+    humidity:TrendService.add(reading.humidity, 'humidity'),
+  }
 }
 

@@ -18,7 +18,7 @@ const init = async (brokerUri: string, topic: string, username: string, password
     baseTopic = topic;
 };
 
-const send = async (readingType: ReadingType, data: number | Reading): Promise<boolean> => {
+const send = async (readingType: ReadingType, data: any): Promise<boolean> => {
     topics[readingType] = baseTopic + '/' + readingType;
     const json = readingType === 'all'
         ? JSON.stringify(data)
@@ -54,5 +54,5 @@ const subscribeTopic = (readingType: ReadingType): Observable<number | Reading> 
     });
 }
 
-export type ReadingType = 'temperature' | 'pressure' | 'humidity' | 'all';
+export type ReadingType = 'temperature' | 'pressure' | 'humidity' | 'all' | 'trend';
 export const MqqtService = { init, send, close, subscribeTopic };
