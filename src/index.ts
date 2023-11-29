@@ -47,6 +47,7 @@ async function run() {
       WLogger.info('Performing shutdown');
       clearTimeout(intervalhandle);
       gracefulShutdown().then(() => {
+        job.cancel();
         SensorService.close();
         WLogger.info('Closing sensor service');
         MqqtService.close();
