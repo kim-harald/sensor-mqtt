@@ -20,7 +20,7 @@ const init = async (brokerUri: string, topic: string, username: string, password
 
 const send = async (readingType: ReadingType, data: any): Promise<boolean> => {
     topics[readingType] = baseTopic + '/' + readingType;
-    const json = readingType === 'all'
+    const json = ['all','trend'].includes(readingType)
         ? JSON.stringify(data)
         : data.toString();
     await client.publish(topics[readingType], json, { retain: true, qos:1 });

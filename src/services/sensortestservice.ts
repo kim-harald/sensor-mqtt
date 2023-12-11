@@ -12,6 +12,20 @@ export class SensorTestService implements ISensorDriver {
 
   private _defaultData: Reading = {} as Reading;
 
+  private _readings: Reading[] = [
+    {temperature:294.94, pressure:101248, humidity:27, ts:1},
+    {temperature:294.96, pressure:101250, humidity:27, ts:2},
+    {temperature:294.98, pressure:101248, humidity:27, ts:3},
+    {temperature:294.96, pressure:101250, humidity:27, ts:4},
+    {temperature:294.96, pressure:101250, humidity:27, ts:5},
+    {temperature:294.96, pressure:101250, humidity:27, ts:6},
+    {temperature:294.96, pressure:101250, humidity:27, ts:7},
+    {temperature:294.96, pressure:101250, humidity:27, ts:8},
+  ];
+
+  private _index = 0;
+
+
   constructor(options: any | undefined) {
     this.open(options);
   }
@@ -30,7 +44,7 @@ export class SensorTestService implements ISensorDriver {
   }
 
   read(): Promise<Reading> {
-    return this.getRandomSample();
+    return this.getNextSample();
   }
 
   public async readAsync(): Promise<Reading> {
@@ -44,6 +58,12 @@ export class SensorTestService implements ISensorDriver {
       pressure: (Math.round(Math.random() * 2000) + 98500),
       temperature: Math.round(Math.random() * 1000 - 500) / 40,
     } as Reading;
+  }
+
+  private async getNextSample():Promise<Reading> {
+    this._index++;
+    this._index = (this._index === this._readings.length) ? 0 : this._index;
+    return this._readings[this._index];
   }
 
   write(data: any): void {

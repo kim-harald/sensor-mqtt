@@ -6,24 +6,9 @@
     "auditLog": "log/.01c18db6c3948d18e60629a29e90c6d5d370f804-audit.json",
     "files": [
         {
-            "date": 1666116667408,
-            "name": "log/weather-2022-10-18.log",
-            "hash": "52448eb5db9d29d6df2f2836e976ab1a581b5b7c89ce4ca2d0e9c96aef77395f"
-        },
-        {
-            "date": 1666204355172,
-            "name": "log/weather-2022-10-19.log",
-            "hash": "af892de3fc69b57be71fc5050e1dae55542aa333cafd3d519b62b229c7dd79ba"
-        },
-        {
-            "date": 1666760726260,
-            "name": "log/weather-2022-10-26.log",
-            "hash": "60ade65e0c012bdc181c70a8c32c6b23569bb67080a0ed81842b91b4c7b70859"
-        },
-        {
-            "date": 1667373450984,
-            "name": "log/weather-2022-11-02.log",
-            "hash": "e3273ea5cd937ec2322adfea02bd4dadd5776b02a3ed93a89a277463220246be"
+            "date": 1701952180194,
+            "name": "log/weather-2023-12-07.log",
+            "hash": "ee6f37339189ba2a8ad97bf89e0dbe37d438def2e2254aef87e0312c0c5dbf67"
         }
     ],
     "hashType": "sha256"

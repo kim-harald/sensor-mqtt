@@ -19,7 +19,10 @@ run();
 
 async function run() {
   try {
-    const i2cbus = await I2CBusOpen(config.I2CBusNumber);
+    const i2cbus = config.DeviceId !== 'Test' 
+      ? await I2CBusOpen(config.I2CBusNumber)
+      : {} as I2CBusP
+      
     const options = (config as any)[config.DeviceId];
     await SensorService.init(i2cbus, config.DeviceId, options);
     await MqqtService.init(config.mqtt.broker, config.mqtt.topic, config.mqtt.user, config.mqtt.pw);
@@ -30,12 +33,12 @@ async function run() {
     intervalhandle = setInterval(async () => {
       const reading = await SensorService.read();
 
-      MqqtService.send('temperature', reading.temperature);
-      MqqtService.send('pressure', reading.pressure);
-      MqqtService.send('humidity', reading.humidity);
+      await MqqtService.send('temperature', reading.temperature);
+      await MqqtService.send('pressure', reading.pressure);
+      await MqqtService.send('humidity', reading.humidity);
       
       const trend = processTrends(reading);
-      MqqtService.send('trend',trend);
+      await MqqtService.send('trend',trend);
 
     }, config.sampleInterval);
 
@@ -71,10 +74,14 @@ const execute = async () => {
 }
 
 const processTrends = (reading:Reading):Record<string,number> => {
-  return {
+  const result = {
     temperature: TrendService.add(reading.temperature, 'temperature'),
     pressure:TrendService.add(reading.pressure, 'pressure'),
     humidity:TrendService.add(reading.humidity, 'humidity'),
-  }
+  };
+
+  WLogger.debug(JSON.stringify(result));
+
+  return result;
 }
 

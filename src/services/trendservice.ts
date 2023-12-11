@@ -1,4 +1,4 @@
-import { rotate } from '../common/common';
+import { rotate, rounded } from '../common/common';
 
 const k_samples = 10 * 10; // 10 samples per minute * 10 minutes
 
@@ -27,7 +27,7 @@ export class TrendService {
 
 const computeTrend = (values: number[]): number => {
   const points = values.map((m: number, index: number) => {
-    return { x: m, y: index };
+    return { x: index, y: m };
   });
   const trendValues = trendline(points);
   return trendValues.a;
@@ -36,6 +36,7 @@ const computeTrend = (values: number[]): number => {
 const trendline = (
   points: { x: number; y: number }[]
 ): { a: number; b: number } => {
+  const epsilon = 3;
   const n = points.length;
   let sigmaXY = 0;
   let sigmaX = 0;
@@ -48,12 +49,13 @@ const trendline = (
     sigmaY += point.y;
   }
 
-  if (sigmaX2 - sigmaX * sigmaX !== 0) {
-    const alpha =
-      (n * sigmaXY - sigmaX * sigmaY) / (n * sigmaX2 - sigmaX * sigmaX);
-    const beta = (sigmaY - alpha * sigmaX) / n;
+  if (sigmaX2 - sigmaX * sigmaX !== 0 && n * sigmaX2 - sigmaX * sigmaX !== 0) {
+    const alpha = (
+      (n * sigmaXY - sigmaX * sigmaY) / (n * sigmaX2 - sigmaX * sigmaX)
+      );
+    const beta = ((sigmaY - alpha * sigmaX) / n);
 
-    return { a: beta, b: alpha };
+    return { a: alpha, b: beta };
   }
 
   return { a: 0, b: 0 };
