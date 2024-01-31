@@ -19,27 +19,30 @@ run();
 
 async function run() {
   try {
-    const i2cbus = config.DeviceId !== 'Test' 
+    const i2cbus = config.DeviceId !== 'Test'
       ? await I2CBusOpen(config.I2CBusNumber)
       : {} as I2CBusP
-      
+
     const options = (config as any)[config.DeviceId];
     await SensorService.init(i2cbus, config.DeviceId, options);
     await MqqtService.init(config.mqtt.broker, config.mqtt.topic, config.mqtt.user, config.mqtt.pw);
     await Db.init(config.Db, 10000);
 
     const delayTime = 10 - new Date().getSeconds() % 10;
-    await delay(delayTime*1000);
+    await delay(delayTime * 1000);
     intervalhandle = setInterval(async () => {
-      const reading = await SensorService.read();
+      try {
+        const reading = await SensorService.read();
 
-      await MqqtService.send('temperature', reading.temperature);
-      await MqqtService.send('pressure', reading.pressure);
-      await MqqtService.send('humidity', reading.humidity);
-      
-      const trend = processTrends(reading);
-      await MqqtService.send('trend',trend);
+        await MqqtService.send('temperature', reading.temperature);
+        await MqqtService.send('pressure', reading.pressure);
+        await MqqtService.send('humidity', reading.humidity);
 
+        const trend = processTrends(reading);
+        await MqqtService.send('trend', trend);
+      } catch (error) {
+        WLogger.error(error);
+      }
     }, config.sampleInterval);
 
     const schedule = config.sampleSchedule;
@@ -66,18 +69,21 @@ async function run() {
 }
 
 const execute = async () => {
-
-  let reading = await SensorService.read();
-  if (await MqqtService.send('all', reading)) {
-    rotate(reading, config.deleteThreshold);
-  };
+  try {
+    let reading = await SensorService.read();
+    if (await MqqtService.send('all', reading)) {
+      rotate(reading, config.deleteThreshold);
+    };
+  } catch (error) {
+    WLogger.error(error);
+  }
 }
 
-const processTrends = (reading:Reading):Record<string,number> => {
+const processTrends = (reading: Reading): Record<string, number> => {
   const result = {
     temperature: TrendService.add(reading.temperature, 'temperature'),
-    pressure:TrendService.add(reading.pressure, 'pressure'),
-    humidity:TrendService.add(reading.humidity, 'humidity'),
+    pressure: TrendService.add(reading.pressure, 'pressure'),
+    humidity: TrendService.add(reading.humidity, 'humidity'),
   };
 
   WLogger.debug(JSON.stringify(result));
