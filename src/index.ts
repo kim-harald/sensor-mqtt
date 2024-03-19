@@ -1,17 +1,17 @@
-import config from './config/default.json';
 import { SensorService } from './services/sensorservice';
 import {
   openPromisified as I2CBusOpen,
   PromisifiedBus as I2CBusP
 } from 'i2c-bus';
-import { MqqtService, ReadingType } from './services/mqqtservice';
-import { gracefulShutdown, Job, scheduleJob } from 'node-schedule';
+import { MqqtService } from './services/mqqtservice';
+import { gracefulShutdown, scheduleJob } from 'node-schedule';
 import { Db } from './data/dbservice';
 import { rotate } from './services/rotateService';
 import { Reading } from './models/reading';
-import { delay, rounded } from './common/common';
-import { WLogger } from './services/loggerservice';
+import { delay } from './common/common';
 import { TrendService } from './services/trendservice';
+import config from './config/default.json';
+import { WLogger } from './services/loggerservice';
 
 let intervalhandle: NodeJS.Timer;
 
@@ -19,6 +19,7 @@ run();
 
 async function run() {
   try {
+
     const i2cbus = config.DeviceId !== 'Test'
       ? await I2CBusOpen(config.I2CBusNumber)
       : {} as I2CBusP
