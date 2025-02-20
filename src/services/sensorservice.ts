@@ -19,7 +19,8 @@ const init = async (i2cBus: PromisifiedBus, deviceId: string, config: any): Prom
 
 const read = async (): Promise<Reading> => {
     const reading = await _sensorDriver.read();
-    reading.id ??= uuidv4().toString();
+    const id = uuidv4().toString();
+    reading.id = id;
     return reading;
 }
 

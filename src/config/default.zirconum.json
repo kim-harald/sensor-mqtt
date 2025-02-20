@@ -1,6 +1,8 @@
 {
     "PORT": 8315,
     "Db": "db/readings.jsondb",
+    "Sync":false,
+    "PayloadUrl":"https://kimharald.no/api/weather/payload",
     "Type": "file",
     "DeviceId": "BMX280",
     "I2CBusNumber": 1,
@@ -43,7 +45,7 @@
     "useStatusLed": false,
     "mqtt": {
         "broker": "mqtts://kimharald.com:8883",
-        "topic": "dalet/sensor",
+        "topic": "zirconum/sensor",
         "user":"gimel",
         "pw":"three generous fruits"
     }

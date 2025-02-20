@@ -3,6 +3,8 @@
     "Db": "db/readings.jsondb",
     "Type": "file",
     "DeviceId": "Test",
+    "Sync":true,
+    "PayloadUrl":"https://adamantum/api/weather/payload",
     "I2CBusNumber": 1,
     "LM75A": {
         "busNumber": 1,
@@ -39,6 +41,7 @@
     "logLevel": "debug",
     "sampleInterval": 10000,
     "sampleSchedule": "0 0,5,10,15,20,25,30,35,40,45,50,55 * * * *",
+    "syncSchedule": "1 2 0 * * fri",
     "deleteThreshold": 86400000,
     "useStatusLed": false,
     "mqtt": {

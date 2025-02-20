@@ -5,5 +5,6 @@ export type Reading = {
     temperature:number,
     pressure:number,
     humidity:number,
-    device?:string
+    device?:string,
+    location?:string
 }

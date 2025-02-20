@@ -3,6 +3,8 @@
     "Db": "db/readings.jsondb",
     "Type": "file",
     "DeviceId": "BMX280",
+    "Sync":false,
+    "PayloadUrl":"https://kimharald.no/api/weather/payload",
     "I2CBusNumber": 1,
     "LM75A": {
         "busNumber": 1,

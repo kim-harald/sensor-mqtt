@@ -58,6 +58,8 @@
     //"forceConsistentCasingInFileNames": true  /* Disallow inconsistently-cased references to the same file. */
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "baseUrl": "./src",
+    
   }
 }

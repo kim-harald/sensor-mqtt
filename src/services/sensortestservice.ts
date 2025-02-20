@@ -13,14 +13,14 @@ export class SensorTestService implements ISensorDriver {
   private _defaultData: Reading = {} as Reading;
 
   private _readings: Reading[] = [
-    {temperature:294.94, pressure:101248, humidity:27, ts:1},
-    {temperature:294.96, pressure:101250, humidity:27, ts:2},
-    {temperature:294.98, pressure:101248, humidity:27, ts:3},
-    {temperature:294.96, pressure:101250, humidity:27, ts:4},
-    {temperature:294.96, pressure:101250, humidity:27, ts:5},
-    {temperature:294.96, pressure:101250, humidity:27, ts:6},
-    {temperature:294.96, pressure:101250, humidity:27, ts:7},
-    {temperature:294.96, pressure:101250, humidity:27, ts:8},
+    {temperature:294.94, pressure:101248, humidity:27, ts:1, id:'1'},
+    {temperature:294.96, pressure:101250, humidity:27, ts:2, id:'2'},
+    {temperature:294.98, pressure:101248, humidity:27, ts:3, id:'3'},
+    {temperature:294.96, pressure:101250, humidity:27, ts:4, id:'4'},
+    {temperature:294.96, pressure:101250, humidity:27, ts:5, id:'5'},
+    {temperature:294.96, pressure:101250, humidity:27, ts:6, id:'6'},
+    {temperature:294.96, pressure:101250, humidity:27, ts:7, id:'7'},
+    {temperature:294.96, pressure:101250, humidity:27, ts:8, id:'8'},
   ];
 
   private _index = 0;

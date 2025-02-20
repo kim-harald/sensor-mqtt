@@ -32,7 +32,7 @@ export const rounded = (v: number, n: number): number => {
 };
 
 export const sortReadings = (a: Reading, b: Reading): number => {
-  return a?.ts - b?.ts ?? 0;
+  return a.ts - b.ts;
 };
 
 export const unique = (arr: any[]): string[] => {
