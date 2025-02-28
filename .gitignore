@@ -1,3 +1,9 @@
 /dist
 /node_modules
 /db
+
+package-lock.json
+/log
+
+.prettierignore
+.prettierrc
