@@ -120,7 +120,7 @@ const write = async (isForce = false): Promise<void> => {
       await pfs.writeFile(_path, JSON.stringify(_data));
       _isDirty = false;
     } catch (error) {
-      WLogger.info(error);
+      WLogger.error(error);
     }
   }
 };
