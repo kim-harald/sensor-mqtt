@@ -15,6 +15,7 @@ import { delay } from './common/common';
 import config from './config/default.json';
 import { Reading } from './models';
 import { Db } from './data';
+import os from 'os';
 
 let intervalhandle: NodeJS.Timer;
 
@@ -33,7 +34,7 @@ async function run() {
     await SensorService.init(i2cbus, config.DeviceId, options);
     await MqqtService.init(
       config.mqtt.broker,
-      config.mqtt.topic,
+      config.mqtt.topic.replace('{hostname}', os.hostname()),
       config.mqtt.user,
       config.mqtt.pw,
     );

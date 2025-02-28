@@ -86,7 +86,7 @@ export class LM75A implements ISensorDriver {
       } as Reading;
       return reading;
     } catch (error) {
-      WLogger.info(error);
+      WLogger.error(error);
       return {} as Reading;
     }
   }

@@ -29,11 +29,16 @@ export const SyncService = {
         const response = await axios.put(config.PayloadUrl, payload, {
           httpsAgent: agent,
         });
-        WLogger.info(`Syncing ${response.status}`);
+        if (![200, 204].includes(response.status)) {
+          throw new Error(`Invalid response ${response.status}. ${response.data}`);
+        }
+
+        WLogger.debug(`Syncing response ${response.status} ${slice.length * page}/${readings.length}`);
 
         page++;
         slice = paginate(readings, pageSize, page);
       }
+      WLogger.info('Syncing data complete');
     } catch (error) {
       WLogger.error(error);
     }
