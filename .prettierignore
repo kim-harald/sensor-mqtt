@@ -1,0 +1,7 @@
+.prettierrc
+package.json
+package-lock.json
+db/*.*
+log/*.json
+.vscode/launch.json
+*.js

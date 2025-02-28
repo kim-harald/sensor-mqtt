@@ -5,106 +5,108 @@ import {
   WLogger,
   rotate,
   SyncService,
-} from './services'
+} from './services';
 import {
   openPromisified as I2CBusOpen,
   PromisifiedBus as I2CBusP,
-} from 'i2c-bus'
-import { gracefulShutdown, Job, scheduleJob } from 'node-schedule'
-import { delay } from './common/common'
-import config from './config/default.json'
-import { Reading } from './models'
-import { Db } from './data'
+} from 'i2c-bus';
+import { gracefulShutdown, Job, scheduleJob } from 'node-schedule';
+import { delay } from './common/common';
+import config from './config/default.json';
+import { Reading } from './models';
+import { Db } from './data';
 
-let intervalhandle: NodeJS.Timer
+let intervalhandle: NodeJS.Timer;
 
-run()
+run();
 
 async function run() {
-  const jobs: Record<string, Job> = {}
+  const jobs: Record<string, Job> = {};
 
   try {
     const i2cbus =
       config.DeviceId !== 'Test'
         ? await I2CBusOpen(config.I2CBusNumber)
-        : ({} as I2CBusP)
+        : ({} as I2CBusP);
 
-    const options = (config as any)[config.DeviceId]
-    await SensorService.init(i2cbus, config.DeviceId, options)
+    const options = (config as any)[config.DeviceId];
+    await SensorService.init(i2cbus, config.DeviceId, options);
     await MqqtService.init(
       config.mqtt.broker,
       config.mqtt.topic,
       config.mqtt.user,
       config.mqtt.pw,
-    )
+    );
 
-    await Db.init(config.Db, 10000)
+    await Db.init(config.Db, 10000);
 
-    const delayTime = 10 - (new Date().getSeconds() % 10)
-    await delay(delayTime * 1000)
-    intervalhandle = setInterval(async () => {
-      try {
-        const reading = await SensorService.read()
-
-        await MqqtService.send('temperature', reading.temperature)
-        await MqqtService.send('pressure', reading.pressure)
-        await MqqtService.send('humidity', reading.humidity)
-
-        const trend = processTrends(reading)
-        await MqqtService.send('trend', trend)
-      } catch (error) {
-        WLogger.error(error)
-      }
-    }, config.sampleInterval)
-
-    jobs['sensor'] = scheduleJob(config.sampleSchedule, sensorRead);
-    
     if (config.Sync) {
-      jobs['sync'] = scheduleJob(config.syncSchedule, SyncService.execute)
-      await SyncService.execute()
+      jobs['sync'] = scheduleJob(config.syncSchedule, SyncService.execute);
+      SyncService.execute();
     }
 
+    const delayTime = 10 - (new Date().getSeconds() % 10);
+    await delay(delayTime * 1000);
+    intervalhandle = setInterval(async () => {
+      try {
+        const reading = await SensorService.read();
+
+        await MqqtService.send('temperature', reading.temperature);
+        await MqqtService.send('pressure', reading.pressure);
+        await MqqtService.send('humidity', reading.humidity);
+
+        const trend = processTrends(reading);
+        await MqqtService.send('trend', trend);
+      } catch (error) {
+        WLogger.error(error);
+      }
+    }, config.sampleInterval);
+
+    jobs['sensor'] = scheduleJob(config.sampleSchedule, sensorRead);
+
     process.on('SIGINT', () => {
-      WLogger.info('Caught interrupt signal')
-      WLogger.info('Performing shutdown')
-      clearInterval(intervalhandle as NodeJS.Timeout)
+      WLogger.info('Caught interrupt signal');
+      WLogger.info('Performing shutdown');
+      clearInterval(intervalhandle as NodeJS.Timeout);
       gracefulShutdown().then(() => {
         Object.values(jobs).forEach((job) => {
-          job.cancel()
-        })
-        SensorService.close()
-        WLogger.info('Closing sensor service')
-        MqqtService.close()
-        WLogger.info('Closing Mqtt service')
-        Db.close()
-        WLogger.info('Closing db')
-        process.exit()
-      })
-    })
+          if (job) {
+            job.cancel();
+          }
+        });
+        SensorService.close();
+        WLogger.info('Closing sensor service');
+        MqqtService.close();
+        WLogger.info('Closing Mqtt service');
+        Db.close();
+        WLogger.info('Closing db');
+        process.exit();
+      });
+    });
   } catch (error) {
-    WLogger.error(error)
+    WLogger.error(error);
   }
 }
 
 const sensorRead = async () => {
   try {
-    let reading = await SensorService.read()
+    let reading = await SensorService.read();
     if (await MqqtService.send('all', reading)) {
-      rotate(reading, config.deleteThreshold)
+      rotate(reading, config.deleteThreshold);
     }
   } catch (error) {
-    WLogger.error(error)
+    WLogger.error(error);
   }
-}
+};
 
 const processTrends = (reading: Reading): Record<string, number> => {
   const result = {
     temperature: TrendService.add(reading.temperature, 'temperature'),
     pressure: TrendService.add(reading.pressure, 'pressure'),
     humidity: TrendService.add(reading.humidity, 'humidity'),
-  }
+  };
 
-  WLogger.debug(JSON.stringify(result))
+  WLogger.debug(JSON.stringify(result));
 
-  return result
-}
+  return result;
+};

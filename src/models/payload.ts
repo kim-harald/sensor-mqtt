@@ -31,7 +31,7 @@ export class Payload {
     return from(SparkMD5.hash(this.getDataForHash())).pipe(
       map((m) => {
         return m === this.hash;
-      })
+      }),
     );
   }
 
@@ -42,7 +42,7 @@ export class Payload {
           m.ts.toString() +
           m.temperature?.toString() +
           m.humidity?.toString() +
-          m.pressure?.toString()
+          m.pressure?.toString(),
       )
       .reduce((a, b) => a + b, '');
 

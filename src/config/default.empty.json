@@ -1,0 +1,52 @@
+{
+  "PORT": 0,
+  "Db": "",
+  "Type": "file",
+  "DeviceId": "Test",
+  "Sync": true,
+  "PayloadUrl": "",
+  "I2CBusNumber": 1,
+  "LM75A": { // LM75A settings
+    "busNumber": 1,
+    "address": 72,
+    "showLog": false
+  },
+  "Test": { // Test settings
+    "busNumber": 1,
+    "address": 1,
+    "showLog": true
+  },
+  "BMX280": { // BMX280 settings
+    "busNumber": 1,
+    "address": 118,
+    "showLog": true
+  },
+  "AHT10": { // AHT10 settings
+    "busNumber": 1,
+    "address": 56,
+    "showLog": true
+  },
+  "AHT10_BMX280": { // AHT10_BMX280 settings
+    "busNumber": 1,
+    "address": 56,
+    "showLog": true,
+    "devices": ["AHT10", "BMX280"]
+  },
+  "Remote": { // Remote settings
+    "busNumber": 1,
+    "address": 72,
+    "showLog": true
+  },
+  "logPath": "log/", // log path
+  "logLevel": "debug", // log level
+  "sampleInterval": 10000, // sample interval in milliseconds
+  "sampleSchedule": "0 0,5,10,15,20,25,30,35,40,45,50,55 * * * *", // sample schedule cron expression
+  "syncSchedule": "1 2 0 * * fri", // sync schedule
+  "deleteThreshold": 86400000, // delete threshold
+  "mqtt": { // mqtt settings
+    "broker": "", // broker url
+    "topic": "",  // topic
+    "user": "",   // user
+    "pw": ""      // password
+  }
+}

@@ -34,7 +34,7 @@ const computeTrend = (values: number[]): number => {
 };
 
 const trendline = (
-  points: { x: number; y: number }[]
+  points: { x: number; y: number }[],
 ): { a: number; b: number } => {
   const epsilon = 3;
   const n = points.length;
@@ -50,10 +50,9 @@ const trendline = (
   }
 
   if (sigmaX2 - sigmaX * sigmaX !== 0 && n * sigmaX2 - sigmaX * sigmaX !== 0) {
-    const alpha = (
-      (n * sigmaXY - sigmaX * sigmaY) / (n * sigmaX2 - sigmaX * sigmaX)
-      );
-    const beta = ((sigmaY - alpha * sigmaX) / n);
+    const alpha =
+      (n * sigmaXY - sigmaX * sigmaY) / (n * sigmaX2 - sigmaX * sigmaX);
+    const beta = (sigmaY - alpha * sigmaX) / n;
 
     return { a: alpha, b: beta };
   }

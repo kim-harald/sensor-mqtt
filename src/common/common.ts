@@ -37,7 +37,7 @@ export const sortReadings = (a: Reading, b: Reading): number => {
 
 export const unique = (arr: any[]): string[] => {
   const result = arr.filter(
-    (item, i, arr) => arr.findIndex((t) => t === item) === i
+    (item, i, arr) => arr.findIndex((t) => t === item) === i,
   );
   return result as string[];
 };
@@ -52,7 +52,7 @@ export const getStandardDeviation = (array: number[]): number => {
   const n = array.length;
   const m = mean(array);
   return Math.sqrt(
-    array.map((x) => Math.pow(x - m, 2)).reduce((a, b) => a + b) / n
+    array.map((x) => Math.pow(x - m, 2)).reduce((a, b) => a + b) / n,
   );
 };
 
@@ -64,7 +64,7 @@ export const normaliseReading = (reading: Reading): Reading => {
   const r1 = normalise(
     reading.temperature ?? 0,
     reading.pressure ?? 0,
-    reading.humidity ?? 0
+    reading.humidity ?? 0,
   );
   return {
     ...reading,
@@ -77,7 +77,7 @@ export const normaliseReading = (reading: Reading): Reading => {
 export const normalise = (
   temperature: number,
   pressure: number,
-  humidity: number
+  humidity: number,
 ): { temperature: number; pressure: number; humidity: number } => {
   return {
     temperature: temperature - cKelvinOffset,
@@ -86,11 +86,10 @@ export const normalise = (
   };
 };
 
-
 export const rotate = (
   values: any[],
   value: any,
-  limit: number = 30
+  limit: number = 30,
 ): any[] => {
   values ??= [];
   values.push(value);
