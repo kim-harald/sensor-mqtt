@@ -1,50 +1,53 @@
 {
-    "PORT": 8315,
-    "Db": "db/readings.jsondb",
-    "Type": "file",
-    "DeviceId": "Test",
-    "I2CBusNumber": 1,
-    "LM75A": {
-        "busNumber": 1,
-        "address": 72,
-        "showLog": false
-    },
-    "Test": {
-        "busNumber": 1,
-        "address": 1,
-        "showLog": true
-    },
-    "BMX280": {
-        "busNumber": 1,
-        "address": 118,
-        "showLog": true
-    },
-    "AHT10": {
-        "busNumber": 1,
-        "address": 56,
-        "showLog": true
-    },
-    "AHT10_BMX280": {
-        "busNumber": 1,
-        "address": 56,
-        "showLog": true,
-        "devices":["AHT10","BMX280"]
-    },
-    "Remote": {
-        "busNumber": 1,
-        "address": 72,
-        "showLog": true
-    },
-    "logPath": "log/",
-    "logLevel": "debug",
-    "sampleInterval": 10000,
-    "sampleSchedule": "0 0,5,10,15,20,25,30,35,40,45,50,55 * * * *",
-    "deleteThreshold": 86400000,
-    "useStatusLed": false,
-    "mqtt": {
-        "broker": "mqtts://kimharald.com:8883",
-        "topic": "alef/sensor",
-        "user":"gimel",
-        "pw":"three generous fruits"
-    }
+  "PORT": 8315,
+  "Db": "db/readings.jsondb",
+  "Type": "file",
+  "DeviceId": "Test",
+  "Sync": true,
+  "PayloadUrl": "https://adamantum:8316/api/weather/payload",
+  "I2CBusNumber": 1,
+  "LM75A": {
+    "busNumber": 1,
+    "address": 72,
+    "showLog": false
+  },
+  "Test": {
+    "busNumber": 1,
+    "address": 1,
+    "showLog": true
+  },
+  "BMX280": {
+    "busNumber": 1,
+    "address": 118,
+    "showLog": true
+  },
+  "AHT10": {
+    "busNumber": 1,
+    "address": 56,
+    "showLog": true
+  },
+  "AHT10_BMX280": {
+    "busNumber": 1,
+    "address": 56,
+    "showLog": true,
+    "devices": ["AHT10", "BMX280"]
+  },
+  "Remote": {
+    "busNumber": 1,
+    "address": 72,
+    "showLog": true
+  },
+  "logPath": "log/",
+  "logLevel": "debug",
+  "sampleInterval": 10000,
+  "sampleSchedule": "0 0,5,10,15,20,25,30,35,40,45,50,55 * * * *",
+  "syncSchedule": "1 2 0 * * fri",
+  "deleteThreshold": 86400000,
+  "useStatusLed": false,
+  "mqtt": {
+    "broker": "mqtts://kimharald.com:8883",
+    "topic": "alef/sensor",
+    "user": "gimel",
+    "pw": "three generous fruits"
+  }
 }

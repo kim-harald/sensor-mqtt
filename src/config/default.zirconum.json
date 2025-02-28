@@ -45,7 +45,7 @@
   "useStatusLed": false,
   "mqtt": {
     "broker": "mqtts://kimharald.com:8883",
-    "topic": "gimel/sensor",
+    "topic": "zirconum/sensor",
     "user": "gimel",
     "pw": "three generous fruits"
   }
